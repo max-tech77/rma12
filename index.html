@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home - Real Madrid</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+/* PAGE FADE IN */
+body{
+margin:0;
+font-family:Poppins;
+color:white;
+opacity:0;
+animation:fadeIn 0.8s ease forwards;
+}
+@keyframes fadeIn{to{opacity:1;}}
+
+/* HEADER */
+header{
+display:flex;
+justify-content:space-between;
+padding:15px 40px;
+background:linear-gradient(to right,#fff,#dbe9ff);
+color:black;
+}
+
+.nav a{
+margin:0 15px;
+text-decoration:none;
+color:#0033a0;
+font-weight:bold;
+position:relative;
+}
+
+/* NAV ANIMATION */
+.nav a::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-5px;
+width:0%;
+height:2px;
+background:#0033a0;
+transition:0.3s;
+}
+.nav a:hover::after{width:100%;}
+
+/* HOME */
+.home{
+background:url("images/home-bg.jpeg") center/cover no-repeat;
+padding:120px 60px;
+}
+.home-content{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+width:320px;
+transition:0.4s;
+}
+.logo:hover{transform:scale(1.1);}
+
+p{
+width:50%;
+line-height:1.7;
+text-shadow:2px 2px 6px black;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div><b>Real Madrid CF</b></div>
+
+<div class="nav">
+<a href="index.html">Home</a>
+<a href="team.html">Team</a>
+<a href="trophies.html">Trophies</a>
+<a href="info.html">Info</a>
+<a href="gallery.html">Gallery</a>
+<a href="shopping.html">Shop</a>
+</div>
+</header>
+
+<section class="home">
+<div class="home-content">
+<p>
+Real Madrid CF is one of the most iconic and successful football clubs in the world, known for its rich history, legendary players, and unmatched achievements. Founded in 1902, the club has built a massive global fanbase and continues to dominate European football with its passion, excellence, and winning mentality. From historic Champions League nights to unforgettable players, Real Madrid represents greatness at every level.
+</p>
+
+<img src="images/rma.png" class="logo">
+</div>
+</section>
+
+<!-- PAGE TRANSITION SCRIPT -->
+<script>
+document.querySelectorAll("a").forEach(link=>{
+link.addEventListener("click",function(e){
+if(this.href.includes(".html")){
+e.preventDefault();
+document.body.style.opacity="0";
+setTimeout(()=>{window.location=this.href;},400);
+}
+});
+});
+</script>
+
+</body>
+</html>

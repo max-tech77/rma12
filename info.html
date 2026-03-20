@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Info</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+body{
+margin:0;
+font-family:Poppins;
+color:white;
+opacity:0;
+animation:fadeIn 0.8s forwards;
+}
+@keyframes fadeIn{to{opacity:1;}}
+
+.home-btn{
+position:absolute;
+top:20px;
+left:20px;
+text-decoration:none;
+color:white;
+font-weight:bold;
+}
+
+.info{
+background:url("images/ronaldo.jpeg") center/cover no-repeat;
+padding:120px;
+}
+
+p{
+max-width:900px;
+line-height:1.7;
+text-shadow:2px 2px 6px black;
+}
+</style>
+</head>
+
+<body>
+
+<a href="index.html" class="home-btn">⬅ Home</a>
+
+<section class="info">
+<h2>Club Legend</h2>
+
+<p>
+Cristiano Ronaldo represents one of the most iconic and unforgettable eras in the history of Real Madrid CF. After joining the club in 2009, he quickly became the face of a new generation, transforming into a global symbol of excellence at the legendary Santiago Bernabéu Stadium. With his incredible goal-scoring ability, unmatched athleticism, and relentless consistency, he shattered records and became the club’s all-time leading scorer.
+
+His legacy was built on the biggest stage in football—the UEFA Champions League—where he led the team to multiple titles, including the historic three consecutive victories. Beyond trophies, Ronaldo embodied the spirit of Real Madrid—discipline, ambition, and an unbreakable winning mentality. Even today, his legacy continues to inspire millions across the world.
+</p>
+
+</section>
+
+<script>
+document.querySelectorAll("a").forEach(link=>{
+link.addEventListener("click",function(e){
+if(this.href.includes(".html")){
+e.preventDefault();
+document.body.style.opacity="0";
+setTimeout(()=>{window.location=this.href;},400);
+}
+});
+});
+</script>
+
+</body>
+</html>

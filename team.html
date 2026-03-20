@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Team</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+/* PAGE FADE */
+body{
+margin:0;
+font-family:Poppins;
+background:linear-gradient(to right,#ffffff,#dbe9ff);
+opacity:0;
+animation:fadeIn 0.8s forwards;
+}
+@keyframes fadeIn{to{opacity:1;}}
+
+.home-btn{
+position:absolute;
+top:20px;
+left:20px;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+padding:40px;
+}
+
+/* CARD */
+.card{
+background:#002b80;
+color:white;
+padding:15px;
+border-radius:10px;
+text-align:center;
+box-shadow:0 10px 20px rgba(0,0,0,0.3);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px) scale(1.05);
+box-shadow:0 20px 40px rgba(0,0,0,0.4);
+}
+
+.card img{
+width:100%;
+border-radius:10px;
+}
+</style>
+</head>
+
+<body>
+
+<a href="index.html" class="home-btn">⬅ Home</a>
+
+<h2 style="text-align:center;">Team</h2>
+
+<div class="grid">
+
+<div class="card">
+<img src="images/p1.png">
+<h3>Kylian Mbappé</h3>
+<p>Position: Forward</p>
+<p>Country: France</p>
+<p>Age: 27</p>
+<p>Value: €200M</p>
+</div>
+
+<div class="card">
+<img src="images/p2.png">
+<h3>Jude Bellingham</h3>
+<p>Position: Midfielder</p>
+<p>Country: England</p>
+<p>Age: 22</p>
+<p>Value: €151M</p>
+</div>
+
+<div class="card">
+<img src="images/p3.png">
+<h3>Vinícius Júnior</h3>
+<p>Position: Forward</p>
+<p>Country: Brazil</p>
+<p>Age: 25</p>
+<p>Value: €150M</p>
+</div>
+
+<div class="card">
+<img src="images/p4.png">
+<h3>Rodrygo</h3>
+<p>Position: Forward</p>
+<p>Country: Brazil</p>
+<p>Age: 25</p>
+<p>Value: €50M</p>
+</div>
+
+<div class="card">
+<img src="images/p5.png">
+<h3>Federico Valverde</h3>
+<p>Position: Midfielder</p>
+<p>Country: Uruguay</p>
+<p>Age: 27</p>
+<p>Value: €130M</p>
+</div>
+
+<div class="card">
+<img src="images/p6.png">
+<h3>Aurélien Tchouaméni</h3>
+<p>Position: Def-midfielder</p>
+<p>Country: France</p>
+<p>Age: 26</p>
+<p>Value: €80M</p>
+</div>
+
+<div class="card">
+<img src="images/p7.png">
+<h3>Raúl Asencio</h3>
+<p>Position: Defender</p>
+<p>Country: Spain</p>
+<p>Age: 23</p>
+<p>Value: €30M</p>
+</div>
+
+<div class="card">
+<img src="images/p8.png">
+<h3>Antonio Rüdiger</h3>
+<p>Position: Defender</p>
+<p>Country: Germany</p>
+<p>Age: 33</p>
+<p>Value: €10M</p>
+</div>
+
+<div class="card">
+<img src="images/p9.png">
+<h3>Dean Huijsen</h3>
+<p>Position: Defender</p>
+<p>Country: Spain</p>
+<p>Age: 20</p>
+<p>Value: €76M</p>
+</div>
+
+
+<div class="card">
+<img src="images/p10.png">
+<h3>Álvaro Carreras</h3>
+<p>Position: Defender</p>
+<p>Country: Spain</p>
+<p>Age: 22</p>
+<p>Value: €60M</p>
+</div>
+
+<div class="card">
+<img src="images/p11.png">
+<h3>Thibaut Courtois</h3>
+<p>Position: Goalkeeper</p>
+<p>Country: Belgium</p>
+<p>Age: 33</p>
+<p>Value: €18M</p>
+</div>
+
+</div>
+
+<!-- TRANSITION SCRIPT -->
+<script>
+document.querySelectorAll("a").forEach(link=>{
+link.addEventListener("click",function(e){
+if(this.href.includes(".html")){
+e.preventDefault();
+document.body.style.opacity="0";
+setTimeout(()=>{window.location=this.href;},400);
+}
+});
+});
+</script>
+
+</body>
+</html>

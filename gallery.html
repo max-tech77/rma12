@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Gallery</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+body{
+margin:0;
+font-family:Poppins;
+color:white;
+opacity:0;
+animation:fadeIn 0.8s forwards;
+}
+@keyframes fadeIn{to{opacity:1;}}
+
+.home-btn{
+position:absolute;
+top:20px;
+left:20px;
+text-decoration:none;
+color:white;
+font-weight:bold;
+}
+
+.gallery{
+position:relative;
+padding:100px;
+text-align:center;
+}
+
+.gallery::before{
+content:"";
+position:absolute;
+inset:0;
+background:url("images/gallery-bg.jpeg") center/cover no-repeat;
+filter:blur(6px);
+opacity:0.5;
+z-index:-1;
+}
+
+.slider{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:20px;
+}
+
+.slider img{
+width:500px;
+border-radius:10px;
+transition:all 0.4s ease;
+}
+
+.slider img:hover{
+transform:scale(1.05);
+}
+
+.arrow{
+font-size:40px;
+cursor:pointer;
+transition:0.3s;
+}
+.arrow:hover{
+transform:scale(1.3);
+color:gold;
+}
+</style>
+</head>
+
+<body>
+
+<a href="index.html" class="home-btn">⬅ Home</a>
+
+<section class="gallery">
+<h2>Gallery</h2>
+
+<p>
+Explore unforgettable moments from the journey of Real Madrid CF—from historic victories to legendary players and iconic celebrations.
+</p>
+
+<div class="slider">
+<div class="arrow" onclick="prev()">&#60;</div>
+<img id="slide" src="images/g1.jpeg">
+<div class="arrow" onclick="next()">&#62;</div>
+</div>
+
+</section>
+
+<script>
+let images=["images/g1.jpeg","images/g2.jpeg","images/g3.jpeg","images/g4.jpeg","images/g5.jpeg"];
+let i=0;
+let slide=document.getElementById("slide");
+
+function showImage(index){
+slide.style.opacity=0;
+setTimeout(()=>{
+slide.src=images[index];
+slide.style.opacity=1;
+},200);
+}
+
+function next(){i=(i+1)%images.length;showImage(i);}
+function prev(){i=(i-1+images.length)%images.length;showImage(i);}
+
+/* PAGE TRANSITION */
+document.querySelectorAll("a").forEach(link=>{
+link.addEventListener("click",function(e){
+if(this.href.includes(".html")){
+e.preventDefault();
+document.body.style.opacity="0";
+setTimeout(()=>{window.location=this.href;},400);
+}
+});
+});
+</script>
+
+</body>
+</html>

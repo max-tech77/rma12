@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Shop - Real Madrid</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+/* PAGE FADE */
+body{
+margin:0;
+font-family:Poppins;
+background:#e6f0ff;
+opacity:0;
+animation:fadeIn 0.8s forwards;
+}
+@keyframes fadeIn{to{opacity:1;}}
+
+/* HOME BUTTON */
+.home-btn{
+position:absolute;
+top:20px;
+left:20px;
+text-decoration:none;
+color:#0033a0;
+font-weight:bold;
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+padding:80px 40px 120px;
+}
+
+/* CARD */
+.card{
+background:white;
+padding:15px;
+border-radius:10px;
+text-align:center;
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+transition:0.3s;
+}
+
+.card:hover{
+transform:scale(1.08);
+box-shadow:0 20px 40px rgba(0,0,0,0.3);
+}
+
+.card img{
+width:100%;
+border-radius:10px;
+}
+
+/* BUTTON */
+button{
+background:#0033a0;
+color:white;
+border:none;
+padding:10px 15px;
+margin-top:10px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#001f66;
+transform:scale(1.05);
+}
+
+/* CART BAR */
+.cart{
+position:fixed;
+bottom:0;
+width:100%;
+background:#0033a0;
+color:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+box-shadow:0 -5px 15px rgba(0,0,0,0.3);
+}
+
+.buy-btn{
+background:white;
+color:#0033a0;
+padding:10px 20px;
+border:none;
+cursor:pointer;
+transition:0.3s;
+}
+
+.buy-btn:hover{
+transform:scale(1.1);
+background:#ddd;
+}
+</style>
+</head>
+
+<body>
+
+<a href="index.html" class="home-btn">⬅ Home</a>
+
+<h2 style="text-align:center; padding-top:60px;">Real Madrid Shop</h2>
+
+<div class="grid">
+
+<!-- PRODUCT 1 -->
+<div class="card">
+<img src="images/s1.jpeg">
+<h3>Home Jersey</h3>
+<p>₹7,999</p>
+<button onclick="add()">Add to Cart</button>
+</div>
+
+<!-- PRODUCT 2 -->
+<div class="card">
+<img src="images/s2.jpeg">
+<h3>Away Jersey</h3>
+<p>₹7,499</p>
+<button onclick="add()">Add to Cart</button>
+</div>
+
+<!-- PRODUCT 3 -->
+<div class="card">
+<img src="images/s3.jpeg">
+<h3>Third Kit</h3>
+<p>₹6,999</p>
+<button onclick="add()">Add to Cart</button>
+</div>
+
+<!-- PRODUCT 4 -->
+<div class="card">
+<img src="images/s4.jpeg">
+<h3>Training Kit</h3>
+<p>₹4,999</p>
+<button onclick="add()">Add to Cart</button>
+</div>
+
+<!-- PRODUCT 5 -->
+<div class="card">
+<img src="images/s5.jpeg">
+<h3>Jacket</h3>
+<p>₹9,999</p>
+<button onclick="add()">Add to Cart</button>
+</div>
+
+<!-- PRODUCT 6 -->
+<div class="card">
+<img src="images/s6.jpeg">
+<h3>Cap</h3>
+<p>₹1,999</p>
+<button onclick="add()">Add to Cart</button>
+</div>
+
+<!-- PRODUCT 7 -->
+<div class="card">
+<img src="images/s7.jpeg">
+<h3>Scarf</h3>
+<p>₹1,499</p>
+<button onclick="add()">Add to Cart</button>
+</div>
+
+<!-- PRODUCT 8 -->
+<div class="card">
+<img src="images/s8.jpeg">
+<h3>Backpack</h3>
+<p>₹3,999</p>
+<button onclick="add()">Add to Cart</button>
+</div>
+
+<!-- PRODUCT 9 -->
+<div class="card">
+<img src="images/s9.jpeg">
+<h3>Football</h3>
+<p>₹2,499</p>
+<button onclick="add()">Add to Cart</button>
+</div>
+
+<!-- PRODUCT 10 -->
+<div class="card">
+<img src="images/s10.jpeg">
+<h3>Boots</h3>
+<p>₹12,999</p>
+<button onclick="add()">Add to Cart</button>
+</div>
+
+</div>
+
+<!-- CART BAR -->
+<div class="cart">
+<div>Items in Cart: <span id="count">0</span></div>
+<button class="buy-btn">Buy Now</button>
+</div>
+
+<!-- SCRIPT -->
+<script>
+let count=0;
+
+function add(){
+count++;
+document.getElementById("count").innerText=count;
+}
+
+/* PAGE TRANSITION */
+document.querySelectorAll("a").forEach(link=>{
+link.addEventListener("click",function(e){
+if(this.href.includes(".html")){
+e.preventDefault();
+document.body.style.opacity="0";
+setTimeout(()=>{window.location=this.href;},400);
+}
+});
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Trophies</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+/* PAGE ANIMATION */
+body{
+margin:0;
+font-family:Poppins;
+color:white;
+opacity:0;
+animation:fadeIn 0.8s forwards;
+}
+@keyframes fadeIn{to{opacity:1;}}
+
+.home-btn{
+position:absolute;
+top:20px;
+left:20px;
+text-decoration:none;
+color:white;
+font-weight:bold;
+}
+
+/* TROPHIES */
+.trophies{
+position:relative;
+padding:150px 60px;
+text-align:center;
+}
+
+.trophies::before{
+content:"";
+position:absolute;
+inset:0;
+background:url("images/trophy-bg.jpeg") center/cover no-repeat;
+opacity:0.3;
+z-index:-1;
+}
+
+/* TABLE */
+table{
+margin:40px auto;
+width:75%;
+font-size:18px;
+background:rgba(255,255,255,0.95);
+color:black;
+border-collapse:collapse;
+border-radius:10px;
+overflow:hidden;
+}
+
+th,td{
+padding:18px;
+border:1px solid #ccc;
+}
+
+/* HOVER */
+table tr:hover{
+background:#f0f4ff;
+}
+</style>
+</head>
+
+<body>
+
+<a href="index.html" class="home-btn">⬅ Home</a>
+
+<section class="trophies">
+<h2>Trophies</h2>
+
+<table>
+<tr><th>Competition</th><th>Titles</th></tr>
+<tr><td>Champions League</td><td>15</td></tr>
+<tr><td>La Liga</td><td>35</td></tr>
+<tr><td>Copa del Rey</td><td>20</td></tr>
+<tr><td>Supercopa</td><td>13</td></tr>
+</table>
+
+</section>
+
+<script>
+document.querySelectorAll("a").forEach(link=>{
+link.addEventListener("click",function(e){
+if(this.href.includes(".html")){
+e.preventDefault();
+document.body.style.opacity="0";
+setTimeout(()=>{window.location=this.href;},400);
+}
+});
+});
+</script>
+
+</body>
+</html>
